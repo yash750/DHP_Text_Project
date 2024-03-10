@@ -8,6 +8,8 @@ from nltk.tokenize import word_tokenize
 from bs4 import BeautifulSoup
 import re
 import json
+from werkzeug.urls import url_quote
+
 
 app = Flask(__name__)
 
