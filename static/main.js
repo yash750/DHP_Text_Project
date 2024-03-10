@@ -14,34 +14,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// const googleSignInBtn = document.getElementById('google-sign-in-btn');
-
-// const provider = new GoogleAuthProvider();
-// console.log("I wasa executed! before auth")
-// googleSignInBtn.addEventListener('click', () => {
-//   console.log("I wasa executed! before auth")
-//   signInWithPopup(auth, provider)
-//     .then((result) => {
-//       const user = result.user;
-//       console.log("I wasa executed!")
-//       console.log(`Signed in as ${user.displayName}`);
-//       location.replace('/index')
-// });
-// });
-
 const googleSignInBtn = document.getElementById('google-sign-in-btn');
-const provider = new GoogleAuthProvider();
 
+const provider = new GoogleAuthProvider();
+console.log("I wasa executed! before auth")
 googleSignInBtn.addEventListener('click', () => {
+  console.log("I wasa executed! before auth")
   signInWithPopup(auth, provider)
     .then((result) => {
       const user = result.user;
+      console.log("I wasa executed!")
       console.log(`Signed in as ${user.displayName}`);
-      
-      // Update the redirect URL to include '/index'
-      location.replace('https://dhp-text-project.onrender.com/index');
-    })
-    .catch((error) => {
-      console.error('Google sign-in error:', error.message);
-    });
+      location.replace('/index')
 });
+});
+
+// const googleSignInBtn = document.getElementById('google-sign-in-btn');
+// const provider = new GoogleAuthProvider();
+
+// googleSignInBtn.addEventListener('click', () => {
+//   signInWithPopup(auth, provider)
+//     .then((result) => {
+//       const user = result.user;
+//       console.log(`Signed in as ${user.displayName}`);
+      
+//       // Update the redirect URL to include '/index'
+//       location.replace('https://dhp-text-project.onrender.com/index');
+//     })
+//     .catch((error) => {
+//       console.error('Google sign-in error:', error.message);
+//     });
+// });
