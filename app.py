@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import psycopg2
 import requests
 import nltk
+nltk.download('all')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from bs4 import BeautifulSoup
