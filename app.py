@@ -137,7 +137,7 @@ def verify_admin():
 @app.route("/viewdetail/<id>",methods=["GET","POST"])
 def viewdetail(id):
     cur = conn.cursor()
-    cur.execute('''SELECT no_of_words,no_of_sentences,postages,headlines,content  FROM DETAILS where id = %s''',(id,))
+    cur.execute('''SELECT no_of_words,no_of_sentences,postages,headlines,content,other_info FROM DETAILS where id = %s''',(id,))
     data = cur.fetchall()
 
     return render_template('details.html',data = data)
