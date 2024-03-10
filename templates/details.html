@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-size: cover;
+            background-image: url('https://img.freepik.com/free-photo/vintage-grunge-paper-background_1048-10911.jpg?w=740&t=st=1709054565~exp=1709055165~hmac=2a9ce6e89f39e9672cda23b95b5dac721d5b6ffcb3e57a4bd04b1a4356aba1bb');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #c3bbbb;
+            color: rgb(250, 247, 247);
+            opacity: 1.0;
+        }
+
+        header {
+            background-color: #8f1a1f;
+            padding: 10px;
+            text-align: center;
+            color: rgb(248, 242, 242);
+        }
+
+        nav {
+            background-color: #c6c5c5;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: rgb(34, 33, 33);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #8f1a1f; /* Change the background color on hover */
+            color: white; /* Change font color on hover for better readability */
+        }
+
+        nav a.logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .container1,.container2 {
+            display: flex;
+            justify-content: space-between;
+            width: 95%;
+            margin: 20px auto;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        table {
+            width: 80%;
+            margin-bottom: 40px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(245, 241, 241, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3b332a;
+            color: white;
+        }
+
+        .first_table{
+            margin-bottom: 50px;
+        }
+
+        .single-column-table {
+            width: 60%;
+            margin-left: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(245, 241, 241, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            color :#333
+        }
+        .Other {
+            width: 60%;
+            margin-left: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(245, 241, 241, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            color :#333
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <b>Alpha - Text Data Analyzer</b> 
+    </header>
+    <nav>
+        <a href="#" class="logo">Alpha</a>
+        <a href="/index">Home</a>
+    </nav>
+
+    <div class="container1">
+        <table class="first_table">
+            <thead>
+                <tr>
+                    <th>No. of Words</th>
+                    <th>No. of Sentences</th>
+                    <th>POS Tags</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br><br>
+        <table class="single-column-table">
+            <thead>
+                <tr>
+                    <th>Headlines</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div class="container2">
+        <table >
+            <thead>
+                <tr>
+                    <th>Cleaned Text</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class="Other">
+            <thead>
+                <tr>
+                    <th>Other_Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item[5] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+

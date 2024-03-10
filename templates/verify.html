@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Verification - Alpha</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231231/pngtree-uninterrupted-pattern-featuring-newspaper-cuttings-image_13889071.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: rgb(5, 5, 5);
+            opacity: 1.0;
+        }
+
+        header {
+            background-color: #8f1a1f;
+            padding: 10px;
+            color: #fffdfd;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #c6c5c5;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: rgb(34, 33, 33);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #8f1a1f;
+            color: white;
+        }
+
+        nav a.logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #heading {
+            max-width: 400px;
+            margin: auto;
+            padding: 1px;
+            background-color: rgba(0, 0, 0, 0.7); /* Adjusted background color for better readability */
+            border-radius: 2px;
+            color: #fffdfd;
+            box-shadow: 10 10 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            opacity: 0.8;
+    
+        }
+    
+
+        #verification-container {
+            max-width: 500px;
+            margin: 35%;
+            margin-top: 20px;
+            padding: 40px;
+            background-color: rgba(245, 241, 241, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            opacity: 1.0;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            width: 80%;
+            margin: auto;
+            padding: 10px 20px;
+            background-color: #ab2525;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #warning-message {
+            display: none;
+            color: #c0392b;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function showWarning() {
+            document.getElementById('warning-message').style.display = 'block';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <b>Alpha - Text Data Analyzer</b>
+    </header>
+
+    <nav>
+        <a href="#" class="logo">Alpha</a>
+        <a href="/index">Home</a>
+    </nav>
+    <br><br>
+    <br><br>
+    <div id="heading">
+        <h1><b>THE <i>Indian</i> EXPRESS</b></h1>
+    </div>
+    <br><br>
+    <div id="verification-container">
+        <h1>Admin Verification</h1>
+        <p><b>Please enter the password for admin access.</b></p>
+        <form id="verification-form" method='post' action="/verify_admin" onsubmit="return validateForm()">
+            <input type="password" name='password' id="password-input" placeholder="Enter Password..." required>
+            <button type="submit" name="submit"><b>Submit</b></button>
+        </form>
+        <br><br>
+        <div id="warning-message"><b>Incorrect password. Please try again.</b></div>
+    </div>
+
+    <footer>
+        <p>Contact Information: Yashwardhan Singh -- yash@sitare.org </p>
+    </footer>
+    <script>
+        function validateForm() {
+            var password = document.getElementById('password-input').value;
+            
+            // Add your server-side logic to check the password here
+            // For now, let's assume the password is incorrect
+            if (password !== 'yash1234') {
+                showWarning();
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission if password is correct
+        }
+    </script>
+</body>
+
+</html>
