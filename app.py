@@ -151,7 +151,7 @@ def signin():
     # return {"le": 8787}
     return render_template('index.html')
 
-@app.route("/index",methods=["GET"])
+@app.route("/index",methods=["GET", "POST"])
 def index():
     #if request.method == 'POST':
     # return {"le": 8787}
