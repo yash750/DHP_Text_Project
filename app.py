@@ -14,7 +14,7 @@ from werkzeug.urls import url_quote
 app = Flask(__name__)
 
 # Making connection to database
-conn = psycopg2.connect(database = "text_analysis",user = 'postgres', password = 2628, host = 'localhost')
+conn = psycopg2.connect(database = "text_analysis",user = 'yash', password = 'uUx09LnYoYxhLckJry8uNTOm94X89ZSm', host = 'dpg-cnmn0euv3ddc73fkmfg0-a', port= 5432)
 
 @app.route("/",methods=['GET', 'POST'])
 def portal():
